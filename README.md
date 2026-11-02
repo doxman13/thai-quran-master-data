@@ -1,25 +1,27 @@
 # Thai Quran Translation Master Dataset
-### ฐานข้อมูลพระมหาคัมภีร์อัลกุรอานฉบับแปลภาษาไทย มาตรฐานสากลครบวงจร (JSON & SQLite)
+### ฐานข้อมูลพระมหาคัมภีร์อัลกุรอานฉบับแปลภาษาไทย มาตรฐานสากลครบวงจร (JSON, CSV & SQLite)
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![SQLite Version](https://img.shields.io/badge/SQLite-3-blue.svg)](https://www.sqlite.org/)
 [![Total Verses](https://img.shields.io/badge/Verses-6%2C236-green.svg)](#)
 [![Total Words](https://img.shields.io/badge/Words-83%2C665-orange.svg)](#)
 [![Total Footnotes](https://img.shields.io/badge/Footnotes-7%2C337-purple.svg)](#)
+[![Transparency Records](https://img.shields.io/badge/Transparency_Errata-1%2C654-blue.svg)](#)
 
 ---
 
 ## 1. บทนำ (Introduction)
 
-คลังข้อมูลชุดนี้เป็น **"ฐานข้อมูลแม่บทฉบับสมบูรณ์ (Canonical Master Dataset)"** สำหรับการศึกษา ค้นคว้า และพัฒนาแอปพลิเคชันอัลกุรอานภาษาไทย โดยรวบรวมเนื้อหาครบทั้ง 5 เสาหลัก ผ่านการจัดมาตรฐานอักขรวิธีคำทับศัพท์และศัพท์ศาสนบัญญัติ (Orthography Standardization) 100% ตรงตามหลักภาษาศาสตร์และจารีตอิสลาม
+คลังข้อมูลชุดนี้เป็น **"ฐานข้อมูลแม่บทฉบับสมบูรณ์ (Canonical Master Dataset)"** สำหรับการศึกษา ค้นคว้า และพัฒนาแอปพลิเคชันอัลกุรอานภาษาไทย โดยรวบรวมเนื้อหาครบทั้ง 5 เสาหลัก พร้อม **"รายงานความโปร่งใสทางวิชาการ (Academic Transparency & Errata Catalog)"** จำนวน 1,654 รายการ ผ่านการจัดมาตรฐานอักขรวิธีคำทับศัพท์และศัพท์ศาสนบัญญัติ 100% ตรงตามหลักภาษาศาสตร์และจารีตอิสลาม
 
-จัดเก็บใน 2 รูปแบบมาตรฐานสากล:
-- **`sqlite/thai_quran_master.db`**: ฐานข้อมูลเชิงสัมพันธ์ (Relational Database) ไฟล์เดียวที่เชื่อมโยงตารางอย่างสมบูรณ์ พร้อมดัชนี (Indexes) ความเร็วสูง
+จัดเก็บใน 3 รูปแบบมาตรฐานสากล:
+- **`sqlite/thai_quran_master.db`**: ฐานข้อมูลเชิงสัมพันธ์ (Relational Database) ไฟล์เดียวที่เชื่อมโยงตารางอย่างสมบูรณ์ พร้อมดัชนี (Indexes) ความเร็วสูง (40.8 MB)
 - **`json/*.json`**: ชุดข้อมูล JSON มาตรฐาน แยกตามประเภท สะดวกต่อการนำไปใช้งานใน Web, Mobile, API, หรือ Data Science Pipeline
+- **`csv/*.csv`**: ชุดข้อมูลตาราง CSV (เข้ารหัส UTF-8 with BOM) สำหรับเปิดใช้งานได้ทันทีใน Microsoft Excel, Google Sheets, Pandas และ R
 
 ---
 
-## 2. โครงสร้างข้อมูล 5 เสาหลัก (The 5 Pillars)
+## 2. โครงสร้างข้อมูล 5 เสาหลัก และความโปร่งใส (The Architecture)
 
 ```mermaid
 graph TD
@@ -28,7 +30,8 @@ graph TD
     M --> F["3. เชิงอรรถอธิบาย (7,337 Footnotes)"]
     M --> W["4. คำต่อคำ WBW (83,665 Words)"]
     M --> T["5. ตัฟซีรย่อ (6,236 Tafsir)"]
-    M --> TH["6. หัวข้อและธีม (Themes & Topics)"]
+    M --> TR["6. รายงานความโปร่งใส (1,654 Transparency Errata)"]
+    M --> TH["7. หัวข้อและธีม (Themes & Topics)"]
 
     V --> V1["ภาษาอาหรับอุษมานีย์ (Uthmani)"]
     V --> V2["คำแปลภาษาไทยตัวเต็ม (Clean)"]
@@ -50,7 +53,9 @@ graph TD
    - คำอธิบายบริบทการประทานโองการ ประวัติศาสตร์ และขยายความหมายอย่างละเอียด
 4. **ตัฟซีรมุคตะศ็อรภาษาไทย (Tafsir Al-Mukhtasar — 6,236 โองการ):**
    - คำอธิบายความหมายสรุปย่อรายโองการจากศูนย์ตัฟซีร ณ นครมักกะฮฺ
-5. **หัวข้อและธีมเนื้อหา (Themes & Topics):**
+5. **รายงานความโปร่งใสทางวิชาการ (Academic Transparency & Errata — 1,654 รายการ):**
+   - บันทึกประวัติการตรวจสอบและแก้ไขข้อผิดพลาด/คำตกหล่นจากฉบับพิมพ์ปี 1990 พร้อมเหตุผลและแหล่งอ้างอิงทางวิชาการทุกจุด รองรับการแสดงผลหน้า `/transparency` ในแอปพลิเคชัน
+6. **หัวข้อและธีมเนื้อหา (Themes & Topics):**
    - สรุปใจความสำคัญของกลุ่มโองการ 1,085 ช่วง (Ayah Themes)
    - ดัชนีจำแนกตามประเด็นเนื้อหา 30 หัวข้อ ครอบคลุม 1,339 โองการ
 
@@ -60,21 +65,26 @@ graph TD
 
 ```
 thai-quran-master-data/
-├── README.md                           # คู่มือการใช้งานและภาพรวม
-├── SCHEMA.md                           # รายละเอียดสคีมาของ SQLite และ JSON
-├── json/                               # ชุดข้อมูล JSON มาตรฐาน
-│   ├── surahs.json                     # ข้อมูลซูเราะฮฺทั้ง 114 บท
-│   ├── quran_thai_translation.json     # ตัวบทอาหรับและคำแปล 6,236 โองการ
-│   ├── quran_footnotes.json            # เชิงอรรถอธิบาย 7,337 ข้อ
-│   ├── quran_wbw_th_en.json            # คำแปลคำต่อคำ 83,665 คำ
-│   ├── quran_tafsir_mokhtasar.json     # ตัฟซีรย่อภาษาไทย 6,236 โองการ
-│   ├── quran_themes.json               # ธีมเนื้อหา 1,085 ช่วง
-│   └── quran_topics.json               # หมวดหมู่และดัชนี 30 หัวข้อ
-├── sqlite/                             # ฐานข้อมูล SQLite มาตรฐาน
-│   └── thai_quran_master.db            # ไฟล์ SQLite รวมทุกตาราง (39.7 MB)
-└── scripts/                            # สคริปต์ไปป์ไลน์
-    ├── build_master_datasets.py        # สคริปต์สังเคราะห์ข้อมูลต้นทาง
-    └── verify_master_datasets.py       # สคริปต์ตรวจความถูกต้อง 100%
+├── README.md                               # คู่มือการใช้งานและภาพรวม
+├── SCHEMA.md                               # รายละเอียดสคีมาของ SQLite, JSON และ CSV
+├── json/                                   # ชุดข้อมูล JSON มาตรฐาน
+│   ├── surahs.json                         # ข้อมูลซูเราะฮฺทั้ง 114 บท (0.02 MB)
+│   ├── quran_thai_translation.json         # ตัวบทอาหรับและคำแปล 6,236 โองการ (13.96 MB)
+│   ├── quran_footnotes.json                # เชิงอรรถอธิบาย 7,337 ข้อ (4.15 MB)
+│   ├── quran_wbw_th_en.json                # คำแปลคำต่อคำ 83,665 คำ (31.58 MB)
+│   ├── quran_tafsir_mokhtasar.json         # ตัฟซีรย่อภาษาไทย 6,236 โองการ (5.70 MB)
+│   ├── quran_themes.json                   # ธีมเนื้อหา 1,085 ช่วง (0.87 MB)
+│   ├── quran_topics.json                   # หมวดหมู่และดัชนี 30 หัวข้อ (0.03 MB)
+│   └── quran_transparency_catalog.json     # บันทึกความโปร่งใส 1,654 รายการ (1.24 MB)
+├── csv/                                    # ชุดข้อมูลตาราง CSV (Excel UTF-8 with BOM)
+│   ├── quran_transparency_catalog.csv      # บันทึกความโปร่งใส 1,654 แถว (0.91 MB)
+│   ├── surahs.csv                          # ดัชนีซูเราะฮฺ 114 แถว (7.7 KB)
+│   └── quran_thai_translation.csv          # ตัวบทและคำแปล 6,236 แถว (7.38 MB)
+├── sqlite/                                 # ฐานข้อมูล SQLite มาตรฐาน
+│   └── thai_quran_master.db                # ไฟล์ SQLite รวมทุกตาราง (40.8 MB)
+└── scripts/                                # สคริปต์ไปป์ไลน์
+    ├── build_master_datasets.py            # สคริปต์สังเคราะห์ข้อมูลต้นทาง
+    └── verify_master_datasets.py           # สคริปต์ตรวจความถูกต้อง 100%
 ```
 
 ---
@@ -102,15 +112,14 @@ print(f"[{row[0]}] {row[1]}")
 print(f"คำแปล: {row[2]}")
 print(f"เชิงอรรถ: {row[3]}")
 
-# 2. ดึงคำแปลคำต่อคำ (WBW) ของโองการ 1:1
+# 2. ดึงประวัติการแก้ไขในรายงานความโปร่งใส (Transparency Errata) ของซูเราะฮฺที่ 2
 c.execute("""
-    SELECT position, arabic, transliteration, translation_th
-    FROM words
-    WHERE verse_key = '1:1'
-    ORDER BY position
+    SELECT verse_key, errata_type, target, replacement, reason
+    FROM transparency_catalog
+    WHERE surah_id = 2 AND errata_type = 'THEOLOGICAL'
 """)
-for pos, ar, tr, th in c.fetchall():
-    print(f"คำที่ {pos}: {ar} ({tr}) = {th}")
+for r in c.fetchall():
+    print(f"[{r[0]}] {r[1]}: '{r[2]}' ➔ '{r[3]}' | เหตุผล: {r[4]}")
 
 conn.close()
 ```
@@ -120,11 +129,23 @@ conn.close()
 ```typescript
 import * as fs from 'fs';
 
-// อ่านคำแปลพระมหาคัมภีร์
-const verses = JSON.parse(fs.readFileSync('json/quran_thai_translation.json', 'utf-8'));
-const ayah1_1 = verses.find((v: any) => v.verse_key === '1:1');
-console.log(ayah1_1.arabic_uthmani);
-console.log(ayah1_1.translation_th);
+// อ่านรายงานความโปร่งใสสำหรับหน้า /transparency
+const errata = JSON.parse(fs.readFileSync('json/quran_transparency_catalog.json', 'utf-8'));
+console.log(`โหลดข้อมูล Errata ทั้งหมด: ${errata.length} รายการ`);
+
+const sample = errata.find((e: any) => e.verse_key === '2:1');
+console.log(`[${sample.verse_key}] ${sample.type}: ${sample.target} -> ${sample.replacement}`);
+```
+
+### 4.3 การเปิดไฟล์ CSV ด้วย Pandas
+
+```python
+import pandas as pd
+
+# อ่านไฟล์ความโปร่งใส
+df = pd.read_csv("csv/quran_transparency_catalog.csv")
+print("สรุปประเภทการแก้ไข (Errata Types):")
+print(df["type"].value_counts())
 ```
 
 ---
@@ -145,6 +166,7 @@ python scripts/verify_master_datasets.py
 - **Total Footnotes:** 7,337 รายการ
 - **Total Tafsir:** 6,236 โองการ
 - **Total Themes:** 1,085 ช่วง
+- **Total Transparency Records:** 1,654 รายการ
 
 ---
 

@@ -3,14 +3,15 @@
 build_master_datasets.py
 
 The Definitive Master Build Pipeline for Thai Quran Translation Master Files.
-Synthesizes and exports canonical Quran datasets in both JSON and SQLite formats:
+Synthesizes and exports canonical Quran datasets in JSON, CSV, and SQLite formats:
 1. Surah Metadata (114 Surahs)
 2. Verses Translation (6,236 Ayahs - Clean, Annotated with Footnotes, Arabic Uthmani, English)
 3. Word-by-Word WBW (83,665 Words - Arabic, Transliteration, Thai, English, Morphological Root)
-4. Footnotes (4,536 Comprehensive Scholarly Annotations)
+4. Footnotes (7,337 Comprehensive Scholarly Annotations)
 5. Tafsir Al-Mukhtasar in Thai (6,236 Ayahs)
 6. Ayah Themes (1,085 Themes) & Quranic Topics (30 Topics, 5 Categories, 1,339 Verse Mappings)
-7. Unified SQLite Database: thai_quran_master.db
+7. Academic Transparency & Errata Catalog (1,654 Scholarly Revision Records)
+8. Unified SQLite Database: thai_quran_master.db
 
 Usage:
     python scripts/build_master_datasets.py
@@ -18,6 +19,7 @@ Usage:
 
 import os
 import sys
+import csv
 import json
 import sqlite3
 from collections import defaultdict
@@ -29,6 +31,7 @@ if sys.stdout.encoding.lower() != 'utf-8':
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 JSON_OUT_DIR = os.path.join(REPO_DIR, "json")
+CSV_OUT_DIR = os.path.join(REPO_DIR, "csv")
 SQLITE_OUT_DIR = os.path.join(REPO_DIR, "sqlite")
 MASTER_DB_PATH = os.path.join(SQLITE_OUT_DIR, "thai_quran_master.db")
 
@@ -40,9 +43,13 @@ SRC_FOOTNOTES = r"H:\gits\thai-quran-web\src\data\thai_footnotes.json"
 SRC_TAFSIR = r"H:\gits\thai-quran-app\assets\tafsir_thai_mokhtasar.json"
 SRC_THEMES = r"H:\gits\thai-quran-web\src\data\qul_ayah_themes.json"
 SRC_TOPICS = r"H:\gits\thai-quran-web\src\data\topics.json"
+SRC_TRANSPARENCY = r"H:\gits\thai-quran-web\src\data\transparency_errata_catalog.json"
 
 def verify_source_files():
-    sources = [SRC_DB, SRC_WBW_MASTER, SRC_ANNOTATED, SRC_FOOTNOTES, SRC_TAFSIR, SRC_THEMES, SRC_TOPICS]
+    sources = [
+        SRC_DB, SRC_WBW_MASTER, SRC_ANNOTATED, SRC_FOOTNOTES,
+        SRC_TAFSIR, SRC_THEMES, SRC_TOPICS, SRC_TRANSPARENCY
+    ]
     for src in sources:
         if not os.path.exists(src):
             print(f"[ERROR] Required source file missing: {src}")
@@ -108,9 +115,14 @@ def load_sources():
         topics_raw = json.load(f)
     print(f"  Loaded {len(themes_raw):,} themes and topics object.")
 
-    return surah_rows, verse_db_rows, word_meta_map, annotated_map, footnotes_raw, wbw_raw, tafsir_map, themes_raw, topics_raw
+    # 7. Transparency Errata Catalog
+    with open(SRC_TRANSPARENCY, "r", encoding="utf-8") as f:
+        transparency_raw = json.load(f)
+    print(f"  Loaded {len(transparency_raw):,} academic transparency errata records.")
 
-def compile_master_datasets(surah_rows, verse_db_rows, word_meta_map, annotated_map, footnotes_raw, wbw_raw, tafsir_map, themes_raw, topics_raw):
+    return surah_rows, verse_db_rows, word_meta_map, annotated_map, footnotes_raw, wbw_raw, tafsir_map, themes_raw, topics_raw, transparency_raw
+
+def compile_master_datasets(surah_rows, verse_db_rows, word_meta_map, annotated_map, footnotes_raw, wbw_raw, tafsir_map, themes_raw, topics_raw, transparency_raw):
     print("\n--- Compiling Normalized Datasets ---")
 
     # 1. Surahs List
@@ -205,10 +217,28 @@ def compile_master_datasets(surah_rows, verse_db_rows, word_meta_map, annotated_
             })
             w_counter += 1
 
-    print(f"✓ Compiled {len(surahs)} surahs, {len(verses):,} verses, {len(footnotes):,} footnotes, and {len(words):,} words.")
-    return surahs, verses, footnotes, words, tafsir_list, themes_raw, topics_raw
+    # 5. Transparency Errata Catalog Flat List
+    transparency = []
+    for idx, item in enumerate(transparency_raw, 1):
+        ayah = str(item.get("ayah", "")).strip()
+        s_id, v_id = map(int, ayah.split(":")) if ":" in ayah else (0, 0)
+        transparency.append({
+            "id": idx,
+            "verse_key": ayah,
+            "surah_id": s_id,
+            "verse_id": v_id,
+            "type": item.get("type", "GENERAL"),
+            "target": item.get("target", ""),
+            "replacement": item.get("replacement", ""),
+            "reason": item.get("reason", ""),
+            "source": item.get("source", ""),
+            "missing_from_printed_copy": 1 if item.get("missingFromPrintedCopy") else 0
+        })
 
-def export_json_files(surahs, verses, footnotes, words, tafsir_list, themes, topics):
+    print(f"✓ Compiled {len(surahs)} surahs, {len(verses):,} verses, {len(footnotes):,} footnotes, {len(words):,} words, and {len(transparency):,} transparency records.")
+    return surahs, verses, footnotes, words, tafsir_list, themes_raw, topics_raw, transparency
+
+def export_json_files(surahs, verses, footnotes, words, tafsir_list, themes, topics, transparency):
     print("\n--- Exporting JSON Datasets ---")
     os.makedirs(JSON_OUT_DIR, exist_ok=True)
 
@@ -219,7 +249,8 @@ def export_json_files(surahs, verses, footnotes, words, tafsir_list, themes, top
         "quran_wbw_th_en.json": words,
         "quran_tafsir_mokhtasar.json": tafsir_list,
         "quran_themes.json": themes,
-        "quran_topics.json": topics
+        "quran_topics.json": topics,
+        "quran_transparency_catalog.json": transparency
     }
 
     for fname, data in json_files.items():
@@ -227,9 +258,47 @@ def export_json_files(surahs, verses, footnotes, words, tafsir_list, themes, top
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         size_mb = os.path.getsize(out_path) / (1024 * 1024)
-        print(f"  -> Exported {fname:30s} ({size_mb:5.2f} MB)")
+        print(f"  -> Exported {fname:32s} ({size_mb:5.2f} MB)")
 
-def build_sqlite_database(surahs, verses, footnotes, words, tafsir_list, themes, topics):
+def export_csv_files(surahs, verses, footnotes, transparency):
+    print("\n--- Exporting CSV Datasets (Excel & Data Science Ready) ---")
+    os.makedirs(CSV_OUT_DIR, exist_ok=True)
+
+    # 1. Transparency Errata CSV (UTF-8 with BOM for seamless Excel compatibility)
+    transparency_csv = os.path.join(CSV_OUT_DIR, "quran_transparency_catalog.csv")
+    with open(transparency_csv, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=[
+            "id", "verse_key", "surah_id", "verse_id", "type",
+            "target", "replacement", "reason", "source", "missing_from_printed_copy"
+        ])
+        writer.writeheader()
+        writer.writerows(transparency)
+    size_mb = os.path.getsize(transparency_csv) / (1024 * 1024)
+    print(f"  -> Exported quran_transparency_catalog.csv   ({size_mb:5.2f} MB)")
+
+    # 2. Surahs CSV
+    surahs_csv = os.path.join(CSV_OUT_DIR, "surahs.csv")
+    with open(surahs_csv, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=[
+            "id", "name_ar", "name_en", "name_th", "revelation_place", "total_verses", "page_start"
+        ])
+        writer.writeheader()
+        writer.writerows(surahs)
+    print(f"  -> Exported surahs.csv                      ({os.path.getsize(surahs_csv)/1024:5.2f} KB)")
+
+    # 3. Verses Translation CSV
+    verses_csv = os.path.join(CSV_OUT_DIR, "quran_thai_translation.csv")
+    with open(verses_csv, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=[
+            "verse_key", "surah_id", "verse_id", "page", "juz", "hizb",
+            "arabic_uthmani", "translation_th", "translation_annotated_th", "translation_en"
+        ], extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(verses)
+    size_mb = os.path.getsize(verses_csv) / (1024 * 1024)
+    print(f"  -> Exported quran_thai_translation.csv      ({size_mb:5.2f} MB)")
+
+def build_sqlite_database(surahs, verses, footnotes, words, tafsir_list, themes, topics, transparency):
     print("\n--- Building Master SQLite Database ---")
     os.makedirs(SQLITE_OUT_DIR, exist_ok=True)
     if os.path.exists(MASTER_DB_PATH):
@@ -259,7 +328,8 @@ def build_sqlite_database(surahs, verses, footnotes, words, tafsir_list, themes,
         ("total_words", str(len(words))),
         ("total_footnotes", str(len(footnotes))),
         ("total_tafsir", str(len(tafsir_list))),
-        ("total_themes", str(len(themes)))
+        ("total_themes", str(len(themes))),
+        ("total_transparency_records", str(len(transparency)))
     ]
     c.executemany("INSERT INTO metadata VALUES (?, ?)", meta_entries)
 
@@ -437,7 +507,30 @@ def build_sqlite_database(surahs, verses, footnotes, words, tafsir_list, themes,
             tv_rows.append((top_id, vk))
     c.executemany("INSERT INTO topic_verses (topic_id, verse_key) VALUES (?, ?)", tv_rows)
 
-    # 9. Create Performance Indexes
+    # 9. Academic Transparency & Errata Catalog Table
+    c.execute("""
+        CREATE TABLE transparency_catalog (
+            id INTEGER PRIMARY KEY,
+            verse_key TEXT NOT NULL,
+            surah_id INTEGER NOT NULL,
+            verse_id INTEGER NOT NULL,
+            errata_type TEXT NOT NULL,
+            target TEXT NOT NULL,
+            replacement TEXT NOT NULL,
+            reason TEXT NOT NULL,
+            source TEXT NOT NULL,
+            missing_from_printed_copy INTEGER DEFAULT 0,
+            FOREIGN KEY (verse_key) REFERENCES verses(verse_key)
+        )
+    """)
+    c.executemany("""
+        INSERT INTO transparency_catalog VALUES (
+            :id, :verse_key, :surah_id, :verse_id, :type,
+            :target, :replacement, :reason, :source, :missing_from_printed_copy
+        )
+    """, transparency)
+
+    # 10. Create Performance Indexes
     print("  Creating relational indexes...")
     c.execute("CREATE INDEX idx_verses_surah_ayah ON verses(surah_id, verse_id)")
     c.execute("CREATE INDEX idx_verses_page ON verses(page)")
@@ -449,6 +542,8 @@ def build_sqlite_database(surahs, verses, footnotes, words, tafsir_list, themes,
     c.execute("CREATE INDEX idx_themes_surah ON themes(surah_id)")
     c.execute("CREATE INDEX idx_topic_verses_topic ON topic_verses(topic_id)")
     c.execute("CREATE INDEX idx_topic_verses_vk ON topic_verses(verse_key)")
+    c.execute("CREATE INDEX idx_transparency_vk ON transparency_catalog(verse_key)")
+    c.execute("CREATE INDEX idx_transparency_type ON transparency_catalog(errata_type)")
 
     conn.commit()
     c.execute("VACUUM")
@@ -466,6 +561,7 @@ def main():
     sources = load_sources()
     datasets = compile_master_datasets(*sources)
     export_json_files(*datasets)
+    export_csv_files(datasets[0], datasets[1], datasets[2], datasets[7])
     build_sqlite_database(*datasets)
 
     print("\n" + "=" * 80)

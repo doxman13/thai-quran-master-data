@@ -1,7 +1,7 @@
 # Data Schema Documentation
 ## Thai Quran Translation Master Dataset
 
-This document provides the definitive schema specification for both the **SQLite Relational Database** (`sqlite/thai_quran_master.db`) and the **Standard JSON Datasets** (`json/`).
+This document provides the definitive schema specification for both the **SQLite Relational Database** (`sqlite/thai_quran_master.db`), the **Standard JSON Datasets** (`json/`), and the **Tabular CSV Datasets** (`csv/`).
 
 ---
 
@@ -13,6 +13,7 @@ erDiagram
     VERSES ||--o{ FOOTNOTES : references
     VERSES ||--o{ WORDS : consists_of
     VERSES ||--o| TAFSIR : explains
+    VERSES ||--o{ TRANSPARENCY_CATALOG : audits
     TOPICS ||--o{ TOPIC_VERSES : maps_to
     TOPIC_CATEGORIES ||--o{ TOPICS : categorizes
     SURAHS ||--o{ THEMES : contextualizes
@@ -106,6 +107,19 @@ erDiagram
         int topic_id FK
         text verse_key FK
     }
+
+    TRANSPARENCY_CATALOG {
+        int id PK
+        text verse_key FK
+        int surah_id
+        int verse_id
+        text errata_type
+        text target
+        text replacement
+        text reason
+        text source
+        int missing_from_printed_copy
+    }
 ```
 
 ---
@@ -191,6 +205,19 @@ Subject-matter indexing across the Quran (e.g., Stories of Prophets, Creed, Acts
 - `topics`: 30 curated Quranic topics.
 - `topic_verses`: 1,339 junction entries mapping topics to specific verses.
 
+### 2.9 Table: `transparency_catalog` (1,654 rows)
+The definitive, transparent scholarly audit log backing the `/transparency` view in the application. Documents all corrections made against the 1990 printed King Fahd Mushaf and classical Tafsir.
+- `id` (INTEGER PRIMARY KEY): Unique errata sequence ID.
+- `verse_key` (TEXT NOT NULL, FK ➔ `verses.verse_key`): Target verse key.
+- `surah_id` (INTEGER NOT NULL): Surah number.
+- `verse_id` (INTEGER NOT NULL): Ayah number.
+- `errata_type` (TEXT NOT NULL): Category of correction (`SPACING`, `TYPO`, `OMISSION`, `FN_PLACEMENT`, `THEOLOGICAL`, `OCR_TYPO`, `SUPREME_TRUTH`, `SPELLING`).
+- `target` (TEXT NOT NULL): The original flawed text snippet.
+- `replacement` (TEXT NOT NULL): The corrected scholarly rendering.
+- `reason` (TEXT NOT NULL): Full academic rationale and historical justification.
+- `source` (TEXT NOT NULL): Audit layer or verification pass.
+- `missing_from_printed_copy` (INTEGER): `1` if the omission was present in the Arabic Uthmani text but absent from the printed 1990 Thai edition; otherwise `0`.
+
 ---
 
 ## 3. JSON Data Formats (`json/`)
@@ -204,3 +231,14 @@ Each JSON file is formatted with UTF-8 encoding and 2-space indentation:
 5. `json/quran_tafsir_mokhtasar.json` (6,236 items): Verse-level concise Tafsir.
 6. `json/quran_themes.json` (1,085 items): Thematic passage breakdowns.
 7. `json/quran_topics.json`: Categories, topics, and verse mappings object.
+8. `json/quran_transparency_catalog.json` (1,654 items): The complete academic audit and revision catalog.
+
+---
+
+## 4. Tabular CSV Datasets (`csv/`)
+
+Encoded in `UTF-8 with BOM` (`utf-8-sig`) for seamless compatibility with Microsoft Excel, Google Sheets, Pandas, R, and database loaders:
+
+1. `csv/quran_transparency_catalog.csv` (1,654 rows): Searchable and filterable table of all 1,654 errata records.
+2. `csv/surahs.csv` (114 rows): Surah directory with verse counts and page indices.
+3. `csv/quran_thai_translation.csv` (6,236 rows): Tabular verse translations with Uthmani Arabic and English.
