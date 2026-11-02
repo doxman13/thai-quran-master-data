@@ -10,7 +10,7 @@ Synthesizes and exports canonical Quran datasets in JSON, CSV, and SQLite format
 4. Footnotes (7,337 Comprehensive Scholarly Annotations)
 5. Tafsir Al-Mukhtasar in Thai (6,236 Ayahs)
 6. Ayah Themes (1,085 Themes) & Quranic Topics (30 Topics, 5 Categories, 1,339 Verse Mappings)
-7. Academic Transparency & Errata Catalog (1,654 Scholarly Revision Records)
+7. Academic Transparency & Errata Catalog (1,655 Scholarly Revision Records)
 8. Unified SQLite Database: thai_quran_master.db
 
 Usage:
