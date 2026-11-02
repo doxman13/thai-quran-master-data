@@ -190,3 +190,18 @@ python scripts/verify_master_datasets.py
 - **ตัวบทพระมหาคัมภีร์อัลกุรอานภาษาอาหรับ:** ศูนย์กษัตริย์ฟะฮัดเพื่อการพิมพ์อัลกุรอาน (King Fahd Glorious Quran Printing Complex, Madinah)
 - **คำแปลพระมหาคัมภีร์ภาษาไทยและเชิงอรรถ:** สมาคมนักเรียนเก่าอาหรับ ประเทศไทย / ศูนย์กษัตริย์ฟะฮัดฯ
 - **ชุดข้อมูลและการจัดระเบียบโครงสร้าง:** เผยแพร่ภายใต้สัญญาอนุญาต [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+---
+
+## 🔄 Universal Repository Synchronization Policy
+
+Anytime ANY fix, correction, or refinement is made to any Thai Quran translation dataset across any repository (`thai-quran-web`, `thai_quran_translation_v4`, `wbw-translation-en-th`, `thai-quran-app`, `hifz-quran-app`), this repository **MUST** be updated and rebuilt using:
+
+```bash
+python scripts/build_master_datasets.py
+python scripts/verify_master_datasets.py
+git commit -am "sync: update master datasets"
+git push origin main
+```
+
+This repository serves as the definitive central upstream and single source of truth for the entire Thai Quran open-data ecosystem.
