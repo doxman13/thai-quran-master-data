@@ -1,0 +1,1028 @@
+[
+  {
+    "id": 1,
+    "name_ar": "الفاتحة",
+    "name_en": "Al-Fatihah",
+    "name_th": "อัล-ฟาติฮะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 7,
+    "page_start": 1
+  },
+  {
+    "id": 2,
+    "name_ar": "البقرة",
+    "name_en": "Al-Baqarah",
+    "name_th": "อัล-บะเกาะเราะฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 286,
+    "page_start": 2
+  },
+  {
+    "id": 3,
+    "name_ar": "آل عمران",
+    "name_en": "Ali 'Imran",
+    "name_th": "อาลิ อิมรอน",
+    "revelation_place": "madinah",
+    "total_verses": 200,
+    "page_start": 50
+  },
+  {
+    "id": 4,
+    "name_ar": "النساء",
+    "name_en": "An-Nisa",
+    "name_th": "อัน-นิซาอ์",
+    "revelation_place": "madinah",
+    "total_verses": 176,
+    "page_start": 76
+  },
+  {
+    "id": 5,
+    "name_ar": "المائدة",
+    "name_en": "Al-Ma'idah",
+    "name_th": "อัล-มาอิดะฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 120,
+    "page_start": 106
+  },
+  {
+    "id": 6,
+    "name_ar": "الأنعام",
+    "name_en": "Al-An'am",
+    "name_th": "อัล-อันอาม",
+    "revelation_place": "makkah",
+    "total_verses": 165,
+    "page_start": 128
+  },
+  {
+    "id": 7,
+    "name_ar": "الأعراف",
+    "name_en": "Al-A'raf",
+    "name_th": "อัล-อะอ์รอฟ",
+    "revelation_place": "makkah",
+    "total_verses": 206,
+    "page_start": 151
+  },
+  {
+    "id": 8,
+    "name_ar": "الأنفال",
+    "name_en": "Al-Anfal",
+    "name_th": "อัล-อันฟาล",
+    "revelation_place": "madinah",
+    "total_verses": 75,
+    "page_start": 177
+  },
+  {
+    "id": 9,
+    "name_ar": "التوبة",
+    "name_en": "At-Tawbah",
+    "name_th": "อัต-เตาบะฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 129,
+    "page_start": 187
+  },
+  {
+    "id": 10,
+    "name_ar": "يونس",
+    "name_en": "Yunus",
+    "name_th": "ยูนุส",
+    "revelation_place": "makkah",
+    "total_verses": 109,
+    "page_start": 207
+  },
+  {
+    "id": 11,
+    "name_ar": "هود",
+    "name_en": "Hud",
+    "name_th": "ฮูด",
+    "revelation_place": "makkah",
+    "total_verses": 123,
+    "page_start": 221
+  },
+  {
+    "id": 12,
+    "name_ar": "يوسف",
+    "name_en": "Yusuf",
+    "name_th": "ยูซุฟ",
+    "revelation_place": "makkah",
+    "total_verses": 111,
+    "page_start": 235
+  },
+  {
+    "id": 13,
+    "name_ar": "الرعد",
+    "name_en": "Ar-Ra'd",
+    "name_th": "อัร-เราะอ์ด",
+    "revelation_place": "makkah",
+    "total_verses": 43,
+    "page_start": 249
+  },
+  {
+    "id": 14,
+    "name_ar": "إبراهيم",
+    "name_en": "Ibrahim",
+    "name_th": "อิบรอฮีม",
+    "revelation_place": "makkah",
+    "total_verses": 52,
+    "page_start": 255
+  },
+  {
+    "id": 15,
+    "name_ar": "الحجر",
+    "name_en": "Al-Hijr",
+    "name_th": "อัล-หิญร์",
+    "revelation_place": "makkah",
+    "total_verses": 99,
+    "page_start": 262
+  },
+  {
+    "id": 16,
+    "name_ar": "النحل",
+    "name_en": "An-Nahl",
+    "name_th": "อัน-นะฮฺล",
+    "revelation_place": "makkah",
+    "total_verses": 128,
+    "page_start": 267
+  },
+  {
+    "id": 17,
+    "name_ar": "الإسراء",
+    "name_en": "Al-Isra",
+    "name_th": "อัล-อิสรออ์",
+    "revelation_place": "makkah",
+    "total_verses": 111,
+    "page_start": 282
+  },
+  {
+    "id": 18,
+    "name_ar": "الكهف",
+    "name_en": "Al-Kahf",
+    "name_th": "อัล-กะฮฺฟ",
+    "revelation_place": "makkah",
+    "total_verses": 110,
+    "page_start": 293
+  },
+  {
+    "id": 19,
+    "name_ar": "مريم",
+    "name_en": "Maryam",
+    "name_th": "มัรยัม",
+    "revelation_place": "makkah",
+    "total_verses": 98,
+    "page_start": 305
+  },
+  {
+    "id": 20,
+    "name_ar": "طه",
+    "name_en": "Ta-Ha",
+    "name_th": "ฏอฮา",
+    "revelation_place": "makkah",
+    "total_verses": 135,
+    "page_start": 312
+  },
+  {
+    "id": 21,
+    "name_ar": "الأنبياء",
+    "name_en": "Al-Anbiya",
+    "name_th": "อัล-อันบิยาอ์",
+    "revelation_place": "makkah",
+    "total_verses": 112,
+    "page_start": 322
+  },
+  {
+    "id": 22,
+    "name_ar": "الحج",
+    "name_en": "Al-Hajj",
+    "name_th": "อัล-ฮัจญ์",
+    "revelation_place": "madinah",
+    "total_verses": 78,
+    "page_start": 331
+  },
+  {
+    "id": 23,
+    "name_ar": "المؤمنون",
+    "name_en": "Al-Mu'minun",
+    "name_th": "อัล-มุอ์มินูน",
+    "revelation_place": "makkah",
+    "total_verses": 118,
+    "page_start": 341
+  },
+  {
+    "id": 24,
+    "name_ar": "النور",
+    "name_en": "An-Nur",
+    "name_th": "อัน-นูร",
+    "revelation_place": "madinah",
+    "total_verses": 64,
+    "page_start": 349
+  },
+  {
+    "id": 25,
+    "name_ar": "الفرقان",
+    "name_en": "Al-Furqan",
+    "name_th": "อัล-ฟุรกอน",
+    "revelation_place": "makkah",
+    "total_verses": 77,
+    "page_start": 359
+  },
+  {
+    "id": 26,
+    "name_ar": "الشعراء",
+    "name_en": "Ash-Shu'ara",
+    "name_th": "อัช-ชุอะรออ์",
+    "revelation_place": "makkah",
+    "total_verses": 227,
+    "page_start": 366
+  },
+  {
+    "id": 27,
+    "name_ar": "النمل",
+    "name_en": "An-Naml",
+    "name_th": "อัน-นัมล์",
+    "revelation_place": "makkah",
+    "total_verses": 93,
+    "page_start": 376
+  },
+  {
+    "id": 28,
+    "name_ar": "القصص",
+    "name_en": "Al-Qasas",
+    "name_th": "อัล-เกาะศ็อศ",
+    "revelation_place": "makkah",
+    "total_verses": 88,
+    "page_start": 385
+  },
+  {
+    "id": 29,
+    "name_ar": "العنكبوت",
+    "name_en": "Al-'Ankabut",
+    "name_th": "อัล-อังกะบูต",
+    "revelation_place": "makkah",
+    "total_verses": 69,
+    "page_start": 396
+  },
+  {
+    "id": 30,
+    "name_ar": "الروم",
+    "name_en": "Ar-Rum",
+    "name_th": "อัร-รูม",
+    "revelation_place": "makkah",
+    "total_verses": 60,
+    "page_start": 404
+  },
+  {
+    "id": 31,
+    "name_ar": "لقمان",
+    "name_en": "Luqman",
+    "name_th": "ลุกมาน",
+    "revelation_place": "makkah",
+    "total_verses": 34,
+    "page_start": 411
+  },
+  {
+    "id": 32,
+    "name_ar": "السجدة",
+    "name_en": "As-Sajdah",
+    "name_th": "อัส-สัจญ์ดะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 30,
+    "page_start": 414
+  },
+  {
+    "id": 33,
+    "name_ar": "الأحزاب",
+    "name_en": "Al-Ahzab",
+    "name_th": "อัล-อะฮฺซาบ",
+    "revelation_place": "madinah",
+    "total_verses": 73,
+    "page_start": 417
+  },
+  {
+    "id": 34,
+    "name_ar": "سبإ",
+    "name_en": "Saba",
+    "name_th": "สะบะอฺ",
+    "revelation_place": "makkah",
+    "total_verses": 54,
+    "page_start": 428
+  },
+  {
+    "id": 35,
+    "name_ar": "فاطر",
+    "name_en": "Fatir",
+    "name_th": "ฟาฏิร",
+    "revelation_place": "makkah",
+    "total_verses": 45,
+    "page_start": 434
+  },
+  {
+    "id": 36,
+    "name_ar": "يس",
+    "name_en": "Ya-Sin",
+    "name_th": "ยาซีน",
+    "revelation_place": "makkah",
+    "total_verses": 83,
+    "page_start": 440
+  },
+  {
+    "id": 37,
+    "name_ar": "الصافات",
+    "name_en": "As-Saffat",
+    "name_th": "อัศ-ศ็อฟฟาต",
+    "revelation_place": "makkah",
+    "total_verses": 182,
+    "page_start": 445
+  },
+  {
+    "id": 38,
+    "name_ar": "ص",
+    "name_en": "Sad",
+    "name_th": "ศอด",
+    "revelation_place": "makkah",
+    "total_verses": 88,
+    "page_start": 452
+  },
+  {
+    "id": 39,
+    "name_ar": "الزمر",
+    "name_en": "Az-Zumar",
+    "name_th": "อัซ-ซุมัร",
+    "revelation_place": "makkah",
+    "total_verses": 75,
+    "page_start": 458
+  },
+  {
+    "id": 40,
+    "name_ar": "غافر",
+    "name_en": "Ghafir",
+    "name_th": "ฆอฟิร",
+    "revelation_place": "makkah",
+    "total_verses": 85,
+    "page_start": 467
+  },
+  {
+    "id": 41,
+    "name_ar": "فصلت",
+    "name_en": "Fussilat",
+    "name_th": "ฟุศศิลัต",
+    "revelation_place": "makkah",
+    "total_verses": 54,
+    "page_start": 477
+  },
+  {
+    "id": 42,
+    "name_ar": "الشورى",
+    "name_en": "Ash-Shura",
+    "name_th": "อัช-ชูรอ",
+    "revelation_place": "makkah",
+    "total_verses": 53,
+    "page_start": 483
+  },
+  {
+    "id": 43,
+    "name_ar": "الزخرف",
+    "name_en": "Az-Zukhruf",
+    "name_th": "อัซ-ซุครุฟ",
+    "revelation_place": "makkah",
+    "total_verses": 89,
+    "page_start": 489
+  },
+  {
+    "id": 44,
+    "name_ar": "الدخان",
+    "name_en": "Ad-Dukhan",
+    "name_th": "อัด-ดุคอน",
+    "revelation_place": "makkah",
+    "total_verses": 59,
+    "page_start": 496
+  },
+  {
+    "id": 45,
+    "name_ar": "الجاثية",
+    "name_en": "Al-Jathiyah",
+    "name_th": "อัล-ญาษิยะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 37,
+    "page_start": 498
+  },
+  {
+    "id": 46,
+    "name_ar": "الأحقاف",
+    "name_en": "Al-Ahqaf",
+    "name_th": "อัล-อะฮฺกอฟ",
+    "revelation_place": "makkah",
+    "total_verses": 35,
+    "page_start": 502
+  },
+  {
+    "id": 47,
+    "name_ar": "محمد",
+    "name_en": "Muhammad",
+    "name_th": "มุฮัมมัด",
+    "revelation_place": "madinah",
+    "total_verses": 38,
+    "page_start": 506
+  },
+  {
+    "id": 48,
+    "name_ar": "الفتح",
+    "name_en": "Al-Fath",
+    "name_th": "อัล-ฟัตห์",
+    "revelation_place": "madinah",
+    "total_verses": 29,
+    "page_start": 511
+  },
+  {
+    "id": 49,
+    "name_ar": "الحجرات",
+    "name_en": "Al-Hujurat",
+    "name_th": "อัล-หุญุรอต",
+    "revelation_place": "madinah",
+    "total_verses": 18,
+    "page_start": 515
+  },
+  {
+    "id": 50,
+    "name_ar": "ق",
+    "name_en": "Qaf",
+    "name_th": "กอฟ",
+    "revelation_place": "makkah",
+    "total_verses": 45,
+    "page_start": 518
+  },
+  {
+    "id": 51,
+    "name_ar": "الذاريات",
+    "name_en": "Adh-Dhariyat",
+    "name_th": "อัซ-ซาริยาต",
+    "revelation_place": "makkah",
+    "total_verses": 60,
+    "page_start": 520
+  },
+  {
+    "id": 52,
+    "name_ar": "الطور",
+    "name_en": "At-Tur",
+    "name_th": "อัฏ-ฏูร",
+    "revelation_place": "makkah",
+    "total_verses": 49,
+    "page_start": 523
+  },
+  {
+    "id": 53,
+    "name_ar": "النجم",
+    "name_en": "An-Najm",
+    "name_th": "อัน-นัจญ์ม",
+    "revelation_place": "makkah",
+    "total_verses": 62,
+    "page_start": 525
+  },
+  {
+    "id": 54,
+    "name_ar": "القمر",
+    "name_en": "Al-Qamar",
+    "name_th": "อัล-เกาะมัร",
+    "revelation_place": "makkah",
+    "total_verses": 55,
+    "page_start": 528
+  },
+  {
+    "id": 55,
+    "name_ar": "الرحمن",
+    "name_en": "Ar-Rahman",
+    "name_th": "อัร-เราะฮฺมาน",
+    "revelation_place": "makkah",
+    "total_verses": 78,
+    "page_start": 531
+  },
+  {
+    "id": 56,
+    "name_ar": "الواقعة",
+    "name_en": "Al-Waqi'ah",
+    "name_th": "อัล-วากิอะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 96,
+    "page_start": 534
+  },
+  {
+    "id": 57,
+    "name_ar": "الحديد",
+    "name_en": "Al-Hadid",
+    "name_th": "อัล-หะดีด",
+    "revelation_place": "madinah",
+    "total_verses": 29,
+    "page_start": 537
+  },
+  {
+    "id": 58,
+    "name_ar": "المجادلة",
+    "name_en": "Al-Mujadila",
+    "name_th": "อัล-มุญาดะละฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 22,
+    "page_start": 542
+  },
+  {
+    "id": 59,
+    "name_ar": "الحشر",
+    "name_en": "Al-Hashr",
+    "name_th": "อัล-ฮัชร์",
+    "revelation_place": "madinah",
+    "total_verses": 24,
+    "page_start": 545
+  },
+  {
+    "id": 60,
+    "name_ar": "الممتحنة",
+    "name_en": "Al-Mumtahanah",
+    "name_th": "อัล-มุมตะหะนะฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 13,
+    "page_start": 548
+  },
+  {
+    "id": 61,
+    "name_ar": "الصف",
+    "name_en": "As-Saff",
+    "name_th": "อัศ-ศ็อฟ",
+    "revelation_place": "madinah",
+    "total_verses": 14,
+    "page_start": 551
+  },
+  {
+    "id": 62,
+    "name_ar": "الجمعة",
+    "name_en": "Al-Jumu'ah",
+    "name_th": "อัล-ญุมุอะฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 11,
+    "page_start": 553
+  },
+  {
+    "id": 63,
+    "name_ar": "المنافقون",
+    "name_en": "Al-Munafiqun",
+    "name_th": "อัล-มุนาฟิกูน",
+    "revelation_place": "madinah",
+    "total_verses": 11,
+    "page_start": 554
+  },
+  {
+    "id": 64,
+    "name_ar": "التغابن",
+    "name_en": "At-Taghabun",
+    "name_th": "อัต-ตะฆอบุน",
+    "revelation_place": "madinah",
+    "total_verses": 18,
+    "page_start": 555
+  },
+  {
+    "id": 65,
+    "name_ar": "الطلاق",
+    "name_en": "At-Talaq",
+    "name_th": "อัฏ-เฏาะลาก",
+    "revelation_place": "madinah",
+    "total_verses": 12,
+    "page_start": 557
+  },
+  {
+    "id": 66,
+    "name_ar": "التحريم",
+    "name_en": "At-Tahrim",
+    "name_th": "อัต-ตะฮฺรีม",
+    "revelation_place": "madinah",
+    "total_verses": 12,
+    "page_start": 560
+  },
+  {
+    "id": 67,
+    "name_ar": "الملك",
+    "name_en": "Al-Mulk",
+    "name_th": "อัล-มุลก์",
+    "revelation_place": "makkah",
+    "total_verses": 30,
+    "page_start": 562
+  },
+  {
+    "id": 68,
+    "name_ar": "القلم",
+    "name_en": "Al-Qalam",
+    "name_th": "อัล-เกาะลัม",
+    "revelation_place": "makkah",
+    "total_verses": 52,
+    "page_start": 564
+  },
+  {
+    "id": 69,
+    "name_ar": "الحاقة",
+    "name_en": "Al-Haqqah",
+    "name_th": "อัล-ฮากเกาะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 52,
+    "page_start": 566
+  },
+  {
+    "id": 70,
+    "name_ar": "المعارج",
+    "name_en": "Al-Ma'arij",
+    "name_th": "อัล-มะอาริจญ์",
+    "revelation_place": "makkah",
+    "total_verses": 44,
+    "page_start": 568
+  },
+  {
+    "id": 71,
+    "name_ar": "نوح",
+    "name_en": "Nuh",
+    "name_th": "นูฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 28,
+    "page_start": 570
+  },
+  {
+    "id": 72,
+    "name_ar": "الجن",
+    "name_en": "Al-Jinn",
+    "name_th": "อัล-ญิน",
+    "revelation_place": "makkah",
+    "total_verses": 28,
+    "page_start": 572
+  },
+  {
+    "id": 73,
+    "name_ar": "المزمل",
+    "name_en": "Al-Muzzammil",
+    "name_th": "อัล-มุซซัมมิล",
+    "revelation_place": "makkah",
+    "total_verses": 20,
+    "page_start": 574
+  },
+  {
+    "id": 74,
+    "name_ar": "المدثر",
+    "name_en": "Al-Muddaththir",
+    "name_th": "อัล-มุดดัษษิร",
+    "revelation_place": "makkah",
+    "total_verses": 56,
+    "page_start": 575
+  },
+  {
+    "id": 75,
+    "name_ar": "القيامة",
+    "name_en": "Al-Qiyamah",
+    "name_th": "อัล-กิยามะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 40,
+    "page_start": 577
+  },
+  {
+    "id": 76,
+    "name_ar": "الإنسان",
+    "name_en": "Al-Insan",
+    "name_th": "อัล-อินซาน",
+    "revelation_place": "madinah",
+    "total_verses": 31,
+    "page_start": 578
+  },
+  {
+    "id": 77,
+    "name_ar": "المرسلات",
+    "name_en": "Al-Mursalat",
+    "name_th": "อัล-มุรสะลาต",
+    "revelation_place": "makkah",
+    "total_verses": 50,
+    "page_start": 580
+  },
+  {
+    "id": 78,
+    "name_ar": "النبإ",
+    "name_en": "An-Naba",
+    "name_th": "อัน-นะบะอ์",
+    "revelation_place": "makkah",
+    "total_verses": 40,
+    "page_start": 582
+  },
+  {
+    "id": 79,
+    "name_ar": "النازعات",
+    "name_en": "An-Nazi'at",
+    "name_th": "อัน-นาซิอาต",
+    "revelation_place": "makkah",
+    "total_verses": 46,
+    "page_start": 583
+  },
+  {
+    "id": 80,
+    "name_ar": "عبس",
+    "name_en": "'Abasa",
+    "name_th": "อะบะสะ",
+    "revelation_place": "makkah",
+    "total_verses": 42,
+    "page_start": 584
+  },
+  {
+    "id": 81,
+    "name_ar": "التكوير",
+    "name_en": "At-Takwir",
+    "name_th": "อัต-ตักวีร",
+    "revelation_place": "makkah",
+    "total_verses": 29,
+    "page_start": 586
+  },
+  {
+    "id": 82,
+    "name_ar": "الانفطار",
+    "name_en": "Al-Infitar",
+    "name_th": "อัล-อินฟิฏอร",
+    "revelation_place": "makkah",
+    "total_verses": 19,
+    "page_start": 586
+  },
+  {
+    "id": 83,
+    "name_ar": "المطففين",
+    "name_en": "Al-Mutaffifin",
+    "name_th": "อัล-มุฏ็อฟฟิฟีน",
+    "revelation_place": "makkah",
+    "total_verses": 36,
+    "page_start": 587
+  },
+  {
+    "id": 84,
+    "name_ar": "الانشقاق",
+    "name_en": "Al-Inshiqaq",
+    "name_th": "อัล-อินชิกอก",
+    "revelation_place": "makkah",
+    "total_verses": 25,
+    "page_start": 589
+  },
+  {
+    "id": 85,
+    "name_ar": "البروج",
+    "name_en": "Al-Buruj",
+    "name_th": "อัล-บุรูจญ์",
+    "revelation_place": "makkah",
+    "total_verses": 22,
+    "page_start": 590
+  },
+  {
+    "id": 86,
+    "name_ar": "الطارق",
+    "name_en": "At-Tariq",
+    "name_th": "อัฏ-ฏอริก",
+    "revelation_place": "makkah",
+    "total_verses": 17,
+    "page_start": 590
+  },
+  {
+    "id": 87,
+    "name_ar": "الأعلى",
+    "name_en": "Al-A'la",
+    "name_th": "อัล-อะอ์ลา",
+    "revelation_place": "makkah",
+    "total_verses": 19,
+    "page_start": 591
+  },
+  {
+    "id": 88,
+    "name_ar": "الغاشية",
+    "name_en": "Al-Ghashiyah",
+    "name_th": "อัล-ฆอชิยะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 26,
+    "page_start": 592
+  },
+  {
+    "id": 89,
+    "name_ar": "الفجر",
+    "name_en": "Al-Fajr",
+    "name_th": "อัล-ฟัจญร์",
+    "revelation_place": "makkah",
+    "total_verses": 30,
+    "page_start": 593
+  },
+  {
+    "id": 90,
+    "name_ar": "البلد",
+    "name_en": "Al-Balad",
+    "name_th": "อัล-บะลัด",
+    "revelation_place": "makkah",
+    "total_verses": 20,
+    "page_start": 594
+  },
+  {
+    "id": 91,
+    "name_ar": "الشمس",
+    "name_en": "Ash-Shams",
+    "name_th": "อัช-ชัมส์",
+    "revelation_place": "makkah",
+    "total_verses": 15,
+    "page_start": 594
+  },
+  {
+    "id": 92,
+    "name_ar": "الليل",
+    "name_en": "Al-Layl",
+    "name_th": "อัล-ลัยล์",
+    "revelation_place": "makkah",
+    "total_verses": 21,
+    "page_start": 595
+  },
+  {
+    "id": 93,
+    "name_ar": "الضحى",
+    "name_en": "Ad-Duha",
+    "name_th": "อัฎ-ฎุฮา",
+    "revelation_place": "makkah",
+    "total_verses": 11,
+    "page_start": 596
+  },
+  {
+    "id": 94,
+    "name_ar": "الشرح",
+    "name_en": "Ash-Sharh",
+    "name_th": "อัช-ชัรห์",
+    "revelation_place": "makkah",
+    "total_verses": 8,
+    "page_start": 596
+  },
+  {
+    "id": 95,
+    "name_ar": "التين",
+    "name_en": "At-Tin",
+    "name_th": "อัต-ตีน",
+    "revelation_place": "makkah",
+    "total_verses": 8,
+    "page_start": 597
+  },
+  {
+    "id": 96,
+    "name_ar": "العلق",
+    "name_en": "Al-'Alaq",
+    "name_th": "อัล-อะลัก",
+    "revelation_place": "makkah",
+    "total_verses": 19,
+    "page_start": 597
+  },
+  {
+    "id": 97,
+    "name_ar": "القدر",
+    "name_en": "Al-Qadr",
+    "name_th": "อัล-ก็อดร์",
+    "revelation_place": "makkah",
+    "total_verses": 5,
+    "page_start": 598
+  },
+  {
+    "id": 98,
+    "name_ar": "البينة",
+    "name_en": "Al-Bayyinah",
+    "name_th": "อัล-บัยยินะฮฺ",
+    "revelation_place": "madinah",
+    "total_verses": 8,
+    "page_start": 598
+  },
+  {
+    "id": 99,
+    "name_ar": "الزلزلة",
+    "name_en": "Az-Zalzalah",
+    "name_th": "อัซ-ซัลซะละฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 8,
+    "page_start": 599
+  },
+  {
+    "id": 100,
+    "name_ar": "العاديات",
+    "name_en": "Al-'Adiyat",
+    "name_th": "อัล-อาดิยาต",
+    "revelation_place": "makkah",
+    "total_verses": 11,
+    "page_start": 599
+  },
+  {
+    "id": 101,
+    "name_ar": "القارعة",
+    "name_en": "Al-Qari'ah",
+    "name_th": "อัล-กอริอะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 11,
+    "page_start": 600
+  },
+  {
+    "id": 102,
+    "name_ar": "التكاثر",
+    "name_en": "At-Takathur",
+    "name_th": "อัต-ตะกาษุร",
+    "revelation_place": "makkah",
+    "total_verses": 8,
+    "page_start": 600
+  },
+  {
+    "id": 103,
+    "name_ar": "العصر",
+    "name_en": "Al-'Asr",
+    "name_th": "อัล-อัศร์",
+    "revelation_place": "makkah",
+    "total_verses": 3,
+    "page_start": 601
+  },
+  {
+    "id": 104,
+    "name_ar": "الهمزة",
+    "name_en": "Al-Humazah",
+    "name_th": "อัล-ฮุมะซะฮฺ",
+    "revelation_place": "makkah",
+    "total_verses": 9,
+    "page_start": 601
+  },
+  {
+    "id": 105,
+    "name_ar": "الفيل",
+    "name_en": "Al-Fil",
+    "name_th": "อัล-ฟีล",
+    "revelation_place": "makkah",
+    "total_verses": 5,
+    "page_start": 601
+  },
+  {
+    "id": 106,
+    "name_ar": "قريش",
+    "name_en": "Quraysh",
+    "name_th": "กุรอยช์",
+    "revelation_place": "makkah",
+    "total_verses": 4,
+    "page_start": 602
+  },
+  {
+    "id": 107,
+    "name_ar": "الماعون",
+    "name_en": "Al-Ma'un",
+    "name_th": "อัล-มาอูน",
+    "revelation_place": "makkah",
+    "total_verses": 7,
+    "page_start": 602
+  },
+  {
+    "id": 108,
+    "name_ar": "الكوثر",
+    "name_en": "Al-Kawthar",
+    "name_th": "อัล-เกาษัร",
+    "revelation_place": "makkah",
+    "total_verses": 3,
+    "page_start": 602
+  },
+  {
+    "id": 109,
+    "name_ar": "الكافرون",
+    "name_en": "Al-Kafirun",
+    "name_th": "อัล-กาฟิรูน",
+    "revelation_place": "makkah",
+    "total_verses": 6,
+    "page_start": 603
+  },
+  {
+    "id": 110,
+    "name_ar": "النصر",
+    "name_en": "An-Nasr",
+    "name_th": "อัน-นัศร์",
+    "revelation_place": "madinah",
+    "total_verses": 3,
+    "page_start": 603
+  },
+  {
+    "id": 111,
+    "name_ar": "المسد",
+    "name_en": "Al-Masad",
+    "name_th": "อัล-มะสัด",
+    "revelation_place": "makkah",
+    "total_verses": 5,
+    "page_start": 603
+  },
+  {
+    "id": 112,
+    "name_ar": "الإخلاص",
+    "name_en": "Al-Ikhlas",
+    "name_th": "อัล-อิคลาศ",
+    "revelation_place": "makkah",
+    "total_verses": 4,
+    "page_start": 604
+  },
+  {
+    "id": 113,
+    "name_ar": "الفلق",
+    "name_en": "Al-Falaq",
+    "name_th": "อัล-ฟะลัก",
+    "revelation_place": "makkah",
+    "total_verses": 5,
+    "page_start": 604
+  },
+  {
+    "id": 114,
+    "name_ar": "الناس",
+    "name_en": "An-Nas",
+    "name_th": "อัน-นาส",
+    "revelation_place": "makkah",
+    "total_verses": 6,
+    "page_start": 604
+  }
+]
