@@ -7,10 +7,10 @@ Synthesizes and exports canonical Quran datasets in JSON, CSV, and SQLite format
 1. Surah Metadata (114 Surahs)
 2. Verses Translation (6,236 Ayahs - Clean, Annotated with Footnotes, Arabic Uthmani, English)
 3. Word-by-Word WBW (83,665 Words - Arabic, Transliteration, Thai, English, Morphological Root)
-4. Footnotes (7,337 Comprehensive Scholarly Annotations)
+4. Footnotes (7,344 Comprehensive Scholarly Annotations)
 5. Tafsir Al-Mukhtasar in Thai (6,236 Ayahs)
 6. Ayah Themes (1,085 Themes) & Quranic Topics (30 Topics, 5 Categories, 1,339 Verse Mappings)
-7. Academic Transparency & Errata Catalog (1,655 Scholarly Revision Records)
+7. Academic Transparency & Errata Catalog (1,656 Scholarly Revision Records)
 8. Unified SQLite Database: thai_quran_master.db
 
 Usage:
