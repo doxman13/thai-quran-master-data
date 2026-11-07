@@ -36,14 +36,17 @@ SQLITE_OUT_DIR = os.path.join(REPO_DIR, "sqlite")
 MASTER_DB_PATH = os.path.join(SQLITE_OUT_DIR, "thai_quran_master.db")
 
 # Source Files
-SRC_DB = r"H:\gits\thai-quran-app\assets\quran_offline.db"
-SRC_WBW_MASTER = r"H:\gits\wbw-translation-en-th\quran_wbw_th_en_MASTER.json"
-SRC_ANNOTATED = r"H:\gits\thai_quran_translation_v4\deliverables\02_thai_quran_translation_v4_annotated.json"
-SRC_FOOTNOTES = r"H:\gits\thai-quran-web\src\data\thai_footnotes.json"
-SRC_TAFSIR = r"H:\gits\thai-quran-app\assets\tafsir_thai_mokhtasar.json"
-SRC_THEMES = r"H:\gits\thai-quran-web\src\data\qul_ayah_themes.json"
-SRC_TOPICS = r"H:\gits\thai-quran-web\src\data\topics.json"
-SRC_TRANSPARENCY = r"H:\gits\thai-quran-web\src\data\transparency_errata_catalog.json"
+PARENT_DIR = os.path.dirname(REPO_DIR)
+GITS_ROOT = PARENT_DIR if os.path.exists(os.path.join(PARENT_DIR, "thai-quran-app")) else r"H:\gits"
+
+SRC_DB = os.path.join(GITS_ROOT, "thai-quran-app", "assets", "quran_offline.db")
+SRC_WBW_MASTER = os.path.join(GITS_ROOT, "wbw-translation-en-th", "quran_wbw_th_en_MASTER.json")
+SRC_ANNOTATED = os.path.join(GITS_ROOT, "thai_quran_translation_v4", "deliverables", "02_thai_quran_translation_v4_annotated.json")
+SRC_FOOTNOTES = os.path.join(GITS_ROOT, "thai-quran-web", "src", "data", "thai_footnotes.json")
+SRC_TAFSIR = os.path.join(GITS_ROOT, "thai-quran-app", "assets", "tafsir_thai_mokhtasar.json")
+SRC_THEMES = os.path.join(GITS_ROOT, "thai-quran-web", "src", "data", "qul_ayah_themes.json")
+SRC_TOPICS = os.path.join(GITS_ROOT, "thai-quran-web", "src", "data", "topics.json")
+SRC_TRANSPARENCY = os.path.join(GITS_ROOT, "thai-quran-web", "src", "data", "transparency_errata_catalog.json")
 
 def verify_source_files():
     sources = [

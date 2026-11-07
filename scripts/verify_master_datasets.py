@@ -35,7 +35,7 @@ EXPECTED_COUNTS = {
     "topic_categories": 5,
     "topics": 30,
     "topic_verses": 1339,
-    "transparency_catalog": 1656
+    "transparency_catalog": 1666
 }
 
 def verify_sqlite():
@@ -121,7 +121,7 @@ def verify_json():
         "quran_wbw_th_en.json": 83665,
         "quran_tafsir_mokhtasar.json": 6236,
         "quran_themes.json": 1085,
-        "quran_transparency_catalog.json": 1656,
+        "quran_transparency_catalog.json": 1666,
         "quran_topics.json": None  # Object with categories/topics/mappings
     }
 
@@ -158,7 +158,7 @@ def verify_csv():
     csv_files = {
         "surahs.csv": 114,
         "quran_thai_translation.csv": 6236,
-        "quran_transparency_catalog.csv": 1656
+        "quran_transparency_catalog.csv": 1666
     }
 
     all_ok = True
